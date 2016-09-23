@@ -33,7 +33,7 @@ class MainController extends Controller
         );
 
         if($validator->fails()){
-            return ['status'=>false, 'error'=>$validator->errors()->setFormat(':message<br>')->all()];
+            return response()->error($validator->errors()->setFormat(':message<br>')->all());
         }
 
         try
@@ -52,11 +52,11 @@ class MainController extends Controller
             //Создание вьюшки нового item'a, если надо ($item), проверить, есть ли такой шаблон (back/groups/items):
             $itemview = view('back/groups/items/'.$entity_name, ['item' => $entity_name])->render();
 
-            return ['status'=>true, 'itemview'=>$itemview];
+            return response()->success(['itemview'=>$itemview]);
         }
         catch(\Exception $e)
         {
-            return ['status'=>false, $e->getMessage()];
+            return response()->error($e->getMessage());
         }
     }
 
@@ -76,18 +76,18 @@ class MainController extends Controller
         );
 
         if($validator->fails()){
-            return ['status'=>false, 'error'=>$validator->errors()->setFormat(':message<br>')->all()];
+            return response()->error($validator->errors()->setFormat(':message<br>')->all());
         }
 
         try
         {
             $saveAgent->save($request->input('agrs'));
 
-            return ['status'=>true];
+            return response()->success([]);
         }
         catch(\Exception $e)
         {
-            return ['status'=>false, $e->getMessage()];
+            return response()->error($e->getMessage());
         }
     }
 
@@ -106,18 +106,18 @@ class MainController extends Controller
         );
 
         if($validator->fails()){
-            return ['status'=>false, 'error'=>$validator->errors()->setFormat(':message<br>')->all()];
+            return response()->error($validator->errors()->setFormat(':message<br>')->all());
         }
 
         try
         {
             $deleteAgent->delete($request->input('agrs'));
 
-            return ['status'=>true];
+            return response()->success([]);
         }
         catch(\Exception $e)
         {
-            return ['status'=>false, $e->getMessage()];
+            return response()->error($e->getMessage());
         }
     }
 }

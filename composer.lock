@@ -268,16 +268,16 @@
         },
         {
             "name": "interpro/origin",
-            "version": "1.0.1",
+            "version": "1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/intpro/origin.git",
-                "reference": "79ed040aec8bb51afd7570a481a546dd23a9488b"
+                "reference": "8dcaccd82e9ab31d593415a1c30d883516c37140"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/intpro/origin/zipball/79ed040aec8bb51afd7570a481a546dd23a9488b",
-                "reference": "79ed040aec8bb51afd7570a481a546dd23a9488b",
+                "url": "https://api.github.com/repos/intpro/origin/zipball/8dcaccd82e9ab31d593415a1c30d883516c37140",
+                "reference": "8dcaccd82e9ab31d593415a1c30d883516c37140",
                 "shasum": ""
             },
             "type": "library",
@@ -307,7 +307,7 @@
             "keywords": [
                 "origin"
             ],
-            "time": "2016-09-22 09:01:35"
+            "time": "2016-09-23 07:18:59"
         },
         {
             "name": "interpro/qsagrtypes",
